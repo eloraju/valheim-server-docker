@@ -1,7 +1,8 @@
 version: "3"
 
 services: 
-  valheim: 
+  valheim:
+    container_name: valheim
     image: lloesche/valheim-server
     cap_add:
       - sys_nice
@@ -10,8 +11,8 @@ services:
       - $HOME/.valheim/data:/opt/valheim
     ports: 
       - "2456-2457:2456-2457/udp"
-      - "9001:9001/tcp"
-      - "8001:80/tcp"
+      - "9001:9001"
+      - "9002:9002"
     env_file:
       - $HOME/.valheim/config/valheim.env
     restart: always
