@@ -1,9 +1,14 @@
 version: "3"
 
 services: 
+<<<<<<< HEAD
+  valheim: 
+    image: ghcr.io/lloesche/valheim-server
+=======
   valheim:
     container_name: valheim
     image: lloesche/valheim-server
+>>>>>>> 428d66e (added server status)
     cap_add:
       - sys_nice
     volumes: 
