@@ -1,0 +1,24 @@
+version: "3"
+
+services: 
+<<<<<<< HEAD
+  valheim: 
+    image: ghcr.io/lloesche/valheim-server
+=======
+  valheim:
+    container_name: valheim
+    image: lloesche/valheim-server
+>>>>>>> 428d66e (added server status)
+    cap_add:
+      - sys_nice
+    volumes: 
+      - $HOME/.valheim/config:/config
+      - $HOME/.valheim/data:/opt/valheim
+    ports: 
+      - "2456-2457:2456-2457/udp"
+      - "9001:9001"
+      - "9002:9002"
+    env_file:
+      - $HOME/.valheim/config/valheim.env
+    restart: always
+    stop_grace_period: 2m
